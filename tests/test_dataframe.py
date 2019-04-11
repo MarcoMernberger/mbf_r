@@ -35,6 +35,13 @@ class TestDataFrameRoundTripping:
         df.index = [str(x) for x in df.index]
         assert_frame_equal(df, pdf)
 
+    def test_categorical_ordered(self):
+        df = pd.DataFrame({"a": pd.Categorical(['a','b','c', 'a'], ordered=True)})
+        rdf = convert_dataframe_to_r(df)
+        pdf = convert_dataframe_from_r(rdf)
+        df.index = [str(x) for x in df.index]
+        assert_frame_equal(df, pdf)
+
     def test_raise_on_funny(self):
         df = pd.DataFrame({"aaaa": [(1,2), (3,4)]})
         with pytest.raises(ValueError) as e:
