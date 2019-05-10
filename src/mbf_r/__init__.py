@@ -4,12 +4,10 @@ import rpy2.robjects as ro
 import rpy2.robjects.numpy2ri
 import rpy2.rinterface as rinterface
 import rpy2.robjects.pandas2ri as pandas2ri
-
 import rpy2.robjects as ro
 
-#rpy2.robjects.numpy2ri.activate()
-#rpy2.robjects.pandas2ri.activate()
 
+__version__ = '0.1'
 
 def convert_dataframe_to_r(obj):
     """Convert a Python DataFRame into int's R equivalent,
