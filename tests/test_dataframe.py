@@ -46,5 +46,5 @@ class TestDataFrameRoundTripping:
         df = pd.DataFrame({"aaaa": [(1,2), (3,4)]})
         with pytest.raises(ValueError) as e:
             convert_dataframe_to_r(df)
-        assert 'aaaa' in str(e)
+        assert 'aaaa' in str(e.value)
 
