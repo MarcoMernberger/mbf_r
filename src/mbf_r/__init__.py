@@ -1,4 +1,3 @@
-# I can't figuer out how to do colnames(x) = value without a helper function
 import numpy as np
 import rpy2.robjects as ro
 import rpy2.robjects.numpy2ri
@@ -12,7 +11,7 @@ __version__ = '0.1'
 def convert_dataframe_to_r(obj):
     """Convert a Python DataFRame into int's R equivalent,
 
-    Stolen from pandas2ri, but I really don't want to activate the
+    Reimplemented from pandas2ri, but I really don't want to activate the
     automatic.
     """
     od = {}
